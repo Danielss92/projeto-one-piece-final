@@ -1,0 +1,132 @@
+
+body{
+
+    background-color: #000000;
+    overflow: hidden;/*esconde tudo o que estiver fora do body, ou seja, vai tirar a barra de rolagem*/
+}
+
+    main::after{/*criacao de efeito gradiente*/
+
+        content:"";
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 80vw;
+
+        background: linear-gradient(
+
+        -233deg, #000 40%, rgba(0,0,0,0) 65%) no-repeat;
+
+        
+
+    }
+
+  main .personagem{
+
+    display: none;/*esconde os elementos que tem a classe personagem*/
+    height: 100vh;
+
+   }
+
+   main .personagem.selecionado{
+
+    display: block;/*mostrar*/
+
+   }
+
+   main .personagem .imagem{
+
+    width: 100%;/*a imagem vai ocupar 100 por cento na largura, e nao estara no tamanho original dela*/
+    height: 100%;
+    object-fit: cover;
+
+   }
+
+   .conteudo{
+
+    /*background-color: orange;*/
+    position: absolute;/*posiciona um elemento na frente dos outros*/
+    top: 0;/*posiciona no topo da pagina*/
+    left: 120px; /*da um espacamento de 120 pixels da borda da esquerda*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/*alinha co conteudo verticalmente*/
+    min-height: 100vh;
+    max-width: 380px;/*O texto vai ocupar 380 pixels de largura*/
+    z-index: 1;/*o eixo z do conteudo, ou seja, esse elemento vai ficar por cima de outros */
+
+
+
+   }
+
+   .conteudo .nome-personagem{
+
+  
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;/*grossura da fonte*/
+    margin-bottom: 20px;/*uma margem de 20 px para baixo*/
+
+
+   }
+
+   .conteudo .descricao{
+
+        
+        color: #ffffff;
+        font-family: "Rubik";
+        font-size: 16px;
+        line-height: 24px;/*espacamento entre as linhas*/
+
+   }
+   .conteudo .logo{
+
+    background-image: url("../imagens/one-piece-logo.png");/*as duas barras significa "volta uma pasta, uma pasta atras"*/
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+   }
+
+   .botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+
+    width: 180px;
+
+    gap: 10px; /*espacamento entre elementos*/
+
+    align-items: center;/*centraliza os itens no centro*/
+
+    background-color: rgba(0,0,0,0.3);/*dessa forma, com  4 zeros, se configura a opacidade*/
+   }
+
+   .botoes .botao{
+
+    border: none;/*tira a borda do botao*/
+    background: #000000;/*tira um possivel fundo que possa ter embaixo da imagem que fique a mostra*/
+    cursor: pointer;/*quando passa o cursor sobre um elemento ele vira uma maozinha*/
+    border-radius: 50%;/*a borda da div do botao tambem esta arredondada*/
+
+   }
+
+   .botoes .botao img{
+
+    border-radius: 50%;/*deixa a imagem arredontada*/
+
+   }
+   .botoes .botao.selecionado{
+
+    transform: scale(1.2);/*aumenta a escala do botao selecionado. 1 e o tamanho normal do elemento*/
+    box-shadow: 0 0 10px #D9D9D9;/*sombra*/
+
+   }
